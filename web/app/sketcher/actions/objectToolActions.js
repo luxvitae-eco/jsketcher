@@ -11,6 +11,7 @@ import {
   RectangleToolIcon
 } from "../icons/tools/ToolIcons";
 import {AddSegmentTool} from "../tools/segment";
+import {BSplineTool} from "../tools/b-spline";
 import {BezierCurveTool} from "../tools/bezier-curve";
 import {EllipseTool} from "../tools/ellipse";
 import {AddPointTool} from "../tools/point";
@@ -126,6 +127,19 @@ export default [
 
     invoke: (ctx) => {
       ctx.viewer.toolManager.takeControl(new BezierCurveTool(ctx.viewer));
+    }
+
+  },
+
+  {
+    id: 'BSplineTool',
+    shortName: 'BSpline',
+    kind: 'Tool',
+    description: 'Add a b spline curve',
+    icon: BezierToolIcon, // need a new icon
+
+    invoke: (ctx) => {
+      ctx.viewer.toolManager.takeControl(new BSplineTool(ctx.viewer));
     }
 
   },
